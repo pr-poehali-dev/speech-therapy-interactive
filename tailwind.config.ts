@@ -7,6 +7,7 @@ export default {
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
+			"./1775707692163232368.html"
 	],
 	prefix: "",
 	theme: {
@@ -89,6 +90,10 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
+			},
+			fontFamily: {
+				nunito: ['Nunito', 'sans-serif'],
+				baloo: ['Baloo 2', 'cursive'],
 			}
 		}
 	},
