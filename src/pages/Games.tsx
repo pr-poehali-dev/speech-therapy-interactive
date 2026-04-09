@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Icon from '@/components/ui/icon';
 
 const GAMES_IMAGE = "https://cdn.poehali.dev/projects/53f21a1b-1c9e-4b10-8b7d-5bb967285277/files/b8244814-6202-4265-80ad-7e55d177afc3.jpg";
+const DINO_IMAGE = "https://cdn.poehali.dev/projects/53f21a1b-1c9e-4b10-8b7d-5bb967285277/files/28cc8f5f-91a5-4fdb-8ed1-4047556653ff.jpg";
 
 const games = [
   {
@@ -83,6 +84,12 @@ export default function Games() {
         {/* Header */}
         <div className="text-center mb-10">
           <div className="inline-block bg-blue-100 text-blue-600 font-bold text-sm px-4 py-1.5 rounded-full mb-3">🎮 Игровая комната</div>
+          <div className="flex justify-center mb-4">
+            <div className="relative">
+              <img src={DINO_IMAGE} alt="Дино" className="w-20 h-20 rounded-full object-cover border-4 border-orange-400 shadow-lg animate-float" />
+              <div className="absolute -top-2 -right-2 bg-orange-400 text-white text-xs font-bold px-2 py-0.5 rounded-full shadow">Дино</div>
+            </div>
+          </div>
           <h1 className="font-baloo text-4xl md:text-5xl font-extrabold text-gradient mb-3">Играем и учимся!</h1>
           <p className="text-slate-600 text-lg max-w-xl mx-auto">Весёлые игры для развития речи. Каждая игра — шаг к красивой речи!</p>
         </div>

@@ -1,6 +1,7 @@
 import Icon from '@/components/ui/icon';
 
 const HERO_IMAGE = "https://cdn.poehali.dev/projects/53f21a1b-1c9e-4b10-8b7d-5bb967285277/files/5ebbb364-af22-4b59-9fba-822d49b648c3.jpg";
+const DINO_IMAGE = "https://cdn.poehali.dev/projects/53f21a1b-1c9e-4b10-8b7d-5bb967285277/files/28cc8f5f-91a5-4fdb-8ed1-4047556653ff.jpg";
 
 const features = [
   { icon: "Mic", color: "bg-pink-100 text-pink-500", label: "Артикуляция", desc: "Упражнения для развития речи" },
@@ -54,6 +55,16 @@ export default function Home({ onNav }: { onNav: (p: string) => void }) {
             </div>
             <div className="absolute -top-4 -right-4 bg-yellow-400 text-white font-baloo font-bold text-lg w-16 h-16 rounded-full flex items-center justify-center shadow-lg animate-wiggle">⭐</div>
             <div className="absolute -bottom-3 -left-3 bg-teal-400 text-white font-bold text-sm px-3 py-1.5 rounded-full shadow-lg">100+ детей</div>
+            {/* Dino mascot */}
+            <div className="absolute -right-10 bottom-8 animate-float" style={{animationDelay:'0.8s'}}>
+              <div className="relative">
+                <img src={DINO_IMAGE} alt="Динозавр" className="w-20 h-20 rounded-2xl shadow-xl border-4 border-orange-300 object-cover" />
+                <div className="absolute -top-8 -left-2 bg-white rounded-xl px-2 py-1 shadow text-xs font-bold text-orange-500 whitespace-nowrap border border-orange-200">
+                  Рычим-говорим! 🦕
+                  <div className="absolute bottom-0 left-4 translate-y-full w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-white"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -88,9 +99,27 @@ export default function Home({ onNav }: { onNav: (p: string) => void }) {
         </div>
       </section>
 
+      {/* Dino promo banner */}
+      <section className="container mx-auto px-4 pb-10">
+        <div className="bg-gradient-to-r from-orange-400 to-amber-400 rounded-[2rem] p-6 flex flex-col sm:flex-row items-center gap-5 shadow-xl">
+          <img src={DINO_IMAGE} alt="Динозавр-логопед" className="w-24 h-24 rounded-2xl object-cover border-4 border-white shadow-lg flex-shrink-0 animate-wiggle" />
+          <div className="text-white text-center sm:text-left">
+            <div className="font-baloo text-2xl font-extrabold mb-1">Привет! Я Дино — твой помощник! 🦕</div>
+            <div className="text-orange-100 text-sm">Вместе мы научимся говорить все звуки. Это весело, обещаю!</div>
+          </div>
+          <button
+            onClick={() => onNav('games')}
+            className="ml-auto flex-shrink-0 bg-white text-orange-500 font-bold px-6 py-3 rounded-full shadow hover:scale-105 active:scale-95 transition-all whitespace-nowrap"
+          >
+            Играть с Дино 🎮
+          </button>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="container mx-auto px-4 pb-20">
-        <div className="bg-gradient-to-br from-pink-500 to-purple-600 rounded-[2rem] p-10 text-center text-white shadow-xl">
+        <div className="bg-gradient-to-br from-pink-500 to-purple-600 rounded-[2rem] p-10 text-center text-white shadow-xl relative overflow-hidden">
+          <div className="absolute right-6 bottom-0 opacity-20 text-[120px] leading-none select-none pointer-events-none">🦕</div>
           <div className="text-5xl mb-4">🗣️</div>
           <h2 className="font-baloo text-3xl font-extrabold mb-3">Готовы начать?</h2>
           <p className="text-pink-100 mb-6 text-lg">Первая консультация — бесплатно! Записывайтесь прямо сейчас.</p>

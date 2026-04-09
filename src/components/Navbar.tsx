@@ -19,7 +19,13 @@ export default function Navbar({ current, onNav }: { current: string; onNav: (p:
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <button onClick={() => onNav('home')} className="flex items-center gap-2 hover:scale-105 transition-transform">
-              <div className="w-9 h-9 bg-gradient-to-br from-pink-500 to-purple-600 rounded-xl flex items-center justify-center text-white font-baloo font-extrabold text-lg">Г</div>
+              <div className="relative w-10 h-10">
+                <img
+                  src="https://cdn.poehali.dev/projects/53f21a1b-1c9e-4b10-8b7d-5bb967285277/files/28cc8f5f-91a5-4fdb-8ed1-4047556653ff.jpg"
+                  alt="Динозавр"
+                  className="w-10 h-10 rounded-xl object-cover shadow"
+                />
+              </div>
               <span className="font-baloo font-extrabold text-xl text-gradient">Говорилка</span>
             </button>
 
