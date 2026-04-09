@@ -132,6 +132,63 @@ export default function Home({ onNav }: { onNav: (p: string) => void }) {
         </div>
       </section>
 
+      {/* Dino Game Banner */}
+      <section className="container mx-auto px-4 pb-10">
+        <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl bg-gradient-to-br from-orange-400 via-amber-400 to-yellow-300">
+          {/* Декоративные пузыри */}
+          <div className="absolute top-4 left-8 w-16 h-16 bg-white/10 rounded-full" />
+          <div className="absolute bottom-4 right-40 w-10 h-10 bg-white/10 rounded-full" />
+          <div className="absolute top-1/2 left-1/3 w-6 h-6 bg-white/15 rounded-full" />
+
+          <div className="flex flex-col md:flex-row items-center gap-0">
+            {/* Динозавр */}
+            <div className="relative flex-shrink-0 flex items-end justify-center md:w-64 pt-6 md:pt-0">
+              <img
+                src="https://cdn.poehali.dev/projects/53f21a1b-1c9e-4b10-8b7d-5bb967285277/files/d069d782-2a70-4d55-a23e-c60f97833ab4.jpg"
+                alt="Дино играет"
+                className="w-52 md:w-60 object-contain drop-shadow-2xl animate-float"
+              />
+              {/* Облачко */}
+              <div className="absolute top-4 right-0 md:-right-4 bg-white rounded-2xl px-3 py-2 shadow-lg text-sm font-bold text-orange-500 border-2 border-orange-200 animate-bounce-in">
+                А-Б-В-Г-Д! 🎉
+                <div className="absolute bottom-0 left-5 translate-y-full w-0 h-0 border-l-6 border-r-6 border-t-6 border-l-transparent border-r-transparent border-t-white" style={{borderWidth:'6px', borderColor:'transparent transparent transparent', borderTopColor:'white'}} />
+              </div>
+            </div>
+
+            {/* Текст */}
+            <div className="flex-1 p-6 md:p-10 text-white text-center md:text-left">
+              <div className="inline-block bg-white/25 backdrop-blur text-white text-xs font-bold px-3 py-1.5 rounded-full mb-4">
+                🦕 Твой игровой помощник
+              </div>
+              <h2 className="font-baloo text-3xl md:text-4xl font-extrabold mb-3 leading-tight">
+                Дино зовёт тебя<br/>
+                <span className="text-white drop-shadow">играть и учиться!</span>
+              </h2>
+              <p className="text-orange-50 text-base mb-6 max-w-md">
+                Каждый день новая игра, новый звук, новая победа. Присоединяйся — вместе мы осилим любой звук!
+              </p>
+
+              {/* Мини-статы */}
+              <div className="flex flex-wrap gap-3 justify-center md:justify-start mb-6">
+                {[['🎮', '6 игр'], ['🔤', '33 буквы'], ['⭐', '100+ уровней']].map(([emoji, label]) => (
+                  <div key={label} className="bg-white/20 backdrop-blur rounded-2xl px-4 py-2 flex items-center gap-2">
+                    <span className="text-lg">{emoji}</span>
+                    <span className="font-bold text-sm">{label}</span>
+                  </div>
+                ))}
+              </div>
+
+              <button
+                onClick={() => onNav('games')}
+                className="bg-white text-orange-500 hover:text-orange-600 font-extrabold text-lg px-8 py-3.5 rounded-full shadow-lg hover:scale-105 active:scale-95 transition-all"
+              >
+                Начать играть! 🚀
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Three Dinos Banner */}
       <section className="container mx-auto px-4 pb-10">
         <h2 className="font-baloo text-3xl font-extrabold text-center mb-6 text-gradient">Познакомься с нашей командой!</h2>
