@@ -5,6 +5,7 @@ const links = [
   { id: 'home', label: 'Главная', emoji: '🏠' },
   { id: 'games', label: 'Игры', emoji: '🎮' },
   { id: 'about', label: 'Обо мне', emoji: '👩‍⚕️' },
+  { id: 'reviews', label: 'Отзывы', emoji: '⭐' },
   { id: 'news', label: 'Новости', emoji: '📰' },
   { id: 'contact', label: 'Напишите нам', emoji: '💌' },
 ];

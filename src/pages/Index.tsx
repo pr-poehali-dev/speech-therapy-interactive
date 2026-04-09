@@ -7,8 +7,9 @@ import About from './About';
 import News from './News';
 import Contact from './Contact';
 import Auth from './Auth';
+import Reviews from './Reviews';
 
-type Page = 'home' | 'games' | 'about' | 'news' | 'contact' | 'login' | 'register';
+type Page = 'home' | 'games' | 'about' | 'news' | 'contact' | 'login' | 'register' | 'reviews';
 
 export default function Index() {
   const [page, setPage] = useState<Page>('home');
@@ -25,6 +26,7 @@ export default function Index() {
       case 'about': return <About onNav={handleNav} />;
       case 'news': return <News />;
       case 'contact': return <Contact />;
+      case 'reviews': return <Reviews onNav={handleNav} />;
       case 'login': return <Auth initialMode="login" />;
       case 'register': return <Auth initialMode="register" />;
       default: return <Home onNav={handleNav} />;

@@ -3,6 +3,39 @@ import Icon from '@/components/ui/icon';
 const HERO_IMAGE = "https://cdn.poehali.dev/projects/53f21a1b-1c9e-4b10-8b7d-5bb967285277/files/5ebbb364-af22-4b59-9fba-822d49b648c3.jpg";
 const DINO_IMAGE = "https://cdn.poehali.dev/projects/53f21a1b-1c9e-4b10-8b7d-5bb967285277/files/28cc8f5f-91a5-4fdb-8ed1-4047556653ff.jpg";
 
+const dinos = [
+  {
+    img: "https://cdn.poehali.dev/projects/53f21a1b-1c9e-4b10-8b7d-5bb967285277/files/6e5d8bf3-7c84-421e-bb76-21ebedaa9cb6.jpg",
+    name: "Дино-Говоряка",
+    role: "Учит буквы и звуки",
+    desc: "Поможет освоить все буквы алфавита и научиться говорить чисто!",
+    color: "from-orange-400 to-amber-400",
+    tag: "🔤 Буквы & Звуки",
+    tagBg: "bg-orange-100 text-orange-700",
+    delay: "delay-100",
+  },
+  {
+    img: "https://cdn.poehali.dev/projects/53f21a1b-1c9e-4b10-8b7d-5bb967285277/files/55daebff-42dc-464a-8f38-7fd9757aa24d.jpg",
+    name: "Дино-Игровик",
+    role: "Мастер весёлых игр",
+    desc: "Превращает тренировку речи в захватывающее приключение!",
+    color: "from-green-400 to-teal-400",
+    tag: "🎮 Игры & Задания",
+    tagBg: "bg-green-100 text-green-700",
+    delay: "delay-200",
+  },
+  {
+    img: "https://cdn.poehali.dev/projects/53f21a1b-1c9e-4b10-8b7d-5bb967285277/files/1f48a13c-3674-41e1-afac-9886d522e658.jpg",
+    name: "Дино-Чемпион",
+    role: "Раздаёт награды",
+    desc: "Каждое достижение ребёнка отмечает золотой звездой и похвалой!",
+    color: "from-purple-400 to-violet-500",
+    tag: "🏆 Достижения",
+    tagBg: "bg-purple-100 text-purple-700",
+    delay: "delay-300",
+  },
+];
+
 const features = [
   { icon: "Mic", color: "bg-pink-100 text-pink-500", label: "Артикуляция", desc: "Упражнения для развития речи" },
   { icon: "Gamepad2", color: "bg-blue-100 text-blue-500", label: "Игры", desc: "Весёлые обучающие игры" },
@@ -99,20 +132,28 @@ export default function Home({ onNav }: { onNav: (p: string) => void }) {
         </div>
       </section>
 
-      {/* Dino promo banner */}
+      {/* Three Dinos Banner */}
       <section className="container mx-auto px-4 pb-10">
-        <div className="bg-gradient-to-r from-orange-400 to-amber-400 rounded-[2rem] p-6 flex flex-col sm:flex-row items-center gap-5 shadow-xl">
-          <img src={DINO_IMAGE} alt="Динозавр-логопед" className="w-24 h-24 rounded-2xl object-cover border-4 border-white shadow-lg flex-shrink-0 animate-wiggle" />
-          <div className="text-white text-center sm:text-left">
-            <div className="font-baloo text-2xl font-extrabold mb-1">Привет! Я Дино — твой помощник! 🦕</div>
-            <div className="text-orange-100 text-sm">Вместе мы научимся говорить все звуки. Это весело, обещаю!</div>
-          </div>
-          <button
-            onClick={() => onNav('games')}
-            className="ml-auto flex-shrink-0 bg-white text-orange-500 font-bold px-6 py-3 rounded-full shadow hover:scale-105 active:scale-95 transition-all whitespace-nowrap"
-          >
-            Играть с Дино 🎮
-          </button>
+        <h2 className="font-baloo text-3xl font-extrabold text-center mb-6 text-gradient">Познакомься с нашей командой!</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {dinos.map((d, i) => (
+            <div key={i} className={`card-hover bg-white rounded-[2rem] overflow-hidden shadow-lg opacity-0 animate-slide-up ${d.delay}`} style={{animationFillMode:'forwards'}}>
+              <div className={`bg-gradient-to-br ${d.color} p-6 flex flex-col items-center`}>
+                <img
+                  src={d.img}
+                  alt={d.name}
+                  className="w-28 h-28 object-cover rounded-2xl border-4 border-white shadow-xl animate-float"
+                  style={{animationDelay: `${i * 0.4}s`}}
+                />
+              </div>
+              <div className="p-5 text-center">
+                <span className={`text-xs font-bold px-3 py-1 rounded-full ${d.tagBg}`}>{d.tag}</span>
+                <h3 className="font-baloo font-extrabold text-lg text-slate-800 mt-3 mb-0.5">{d.name}</h3>
+                <p className="text-xs font-semibold text-slate-400 mb-2">{d.role}</p>
+                <p className="text-sm text-slate-600 leading-relaxed">{d.desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

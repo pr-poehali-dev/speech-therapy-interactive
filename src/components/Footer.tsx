@@ -13,7 +13,7 @@ export default function Footer({ onNav }: { onNav: (p: string) => void }) {
           <div>
             <h4 className="font-bold mb-3 text-pink-400">Разделы</h4>
             <ul className="space-y-2 text-sm text-slate-400">
-              {[['home','🏠 Главная'],['games','🎮 Игры'],['about','👩‍⚕️ Обо мне'],['news','📰 Новости'],['contact','💌 Напишите нам']].map(([id, label]) => (
+              {[['home','🏠 Главная'],['games','🎮 Игры'],['about','👩‍⚕️ Обо мне'],['reviews','⭐ Отзывы'],['news','📰 Новости'],['contact','💌 Напишите нам']].map(([id, label]) => (
                 <li key={id}>
                   <button onClick={() => onNav(id)} className="hover:text-pink-400 transition-colors">{label}</button>
                 </li>
